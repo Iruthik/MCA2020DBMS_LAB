@@ -71,7 +71,7 @@ select * from loan_accounts where int_rate is not null;
  
  SELECT cust_name,loan_amount,int_rate  from student where int_rate is null ;
  /*16 th question*/
- select * from loan_accounts order by loan_amount desc,start_date desc;
+ select * from loan_accounts order by loan_amount ,start_date desc;
  select * from loan_accounts;
  
  select cust_name,loan_amount,ifnull(int_rate,'No Interest') as int_rate from loan_accounts;
