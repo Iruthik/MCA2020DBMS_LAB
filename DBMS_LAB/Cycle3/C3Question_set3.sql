@@ -88,3 +88,25 @@ SELECT d.DNAME,d.DNUMBER,e.SSN,e.ENAME,e.DESIG,e.DOJ,e.SALARY FROM DEPARTMENT d,
 WHERE  (SELECT COUNT(*) FROM EMPLOYEE e WHERE e.DNO = d.DNUMBER AND e.SALARY> 40000) > 4 AND 
 e.DNO=d.DNUMBER GROUP BY d.DNAME,d.DNUMBER,e.SSN,e.ENAME,e.DESIG,e.DOJ,e.SALARY;
 
+/*8Use the tables Employee, and Department. Perform the operations as mentioned below: */
+/*(a)Display the employee details, departments that the departments are same in 
+both the emp and dept. (Equi-join)*/
+SELECT * From 	EMPLOYEE E,DEPARTMENT D WHERE E.DNO=D.DNumber;
+
+/*b)Non Equi Join*/
+SELECT * FROM EMPLOYEE E,DEPARTMENT D WHERE NOT (E.DNO = D.DNumber);
+
+/*c)Left Outer Join Join*/
+SELECT * FROM EMPLOYEE E LEFT OUTER JOIN DEPARTMENT D ON E.DNO=D.DNumber;
+
+/*d)Right Outer Join*/
+SELECT * FROM EMPLOYEE E RIGHT OUTER JOIN DEPARTMENT D ON E.DNO=D.DNumber;
+
+/*e)Inner Join*/
+SELECT * FROM EMPLOYEE E INNER JOIN DEPARTMENT D ON E.DNO=D.DNumber;
+
+
+
+
+
+
